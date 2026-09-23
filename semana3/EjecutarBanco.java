@@ -10,7 +10,9 @@ public class EjecutarBanco {
 
     System.out.println(objCuenta1.toString());
 
-    objCuenta1.retirarCuenta(5000.0);
+    boolean flag = objCuenta1.retirarCuenta(5000.0);
+
+    System.out.println(flag);
 
     System.out.println(objCuenta1.toString());
   }

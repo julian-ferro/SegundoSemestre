@@ -1,41 +1,44 @@
 public class Cuenta {
-  
-  //Atributos
+
+  // Atributos
   private int cedula;
   private String nombre;
   private String numeroCuenta;
   private String tipoCuenta;
   private double saldo;
-  
-  //El constructor de la clase permite inicializar la clase
-  //El constructor de la clase se reconoce porque tiene el mismo nombre de la clase
-  public Cuenta(int cedula, String nombre, String numeroCuenta, String tipoCuenta, double saldo){
+
+  // El constructor de la clase permite inicializar la clase
+  // El constructor de la clase se reconoce porque tiene el mismo nombre de la
+  // clase
+  public Cuenta(int cedula, String nombre, String numeroCuenta, String tipoCuenta, double saldo) {
     this.cedula = cedula;
-    this.nombre= nombre;
+    this.nombre = nombre;
     this.numeroCuenta = numeroCuenta;
     this.tipoCuenta = tipoCuenta;
     this.saldo = saldo;
   }
-  
-  public String toString(){
-    return "Cuenta [ cedula:" + cedula + " nombre: " + nombre + " numeroCuenta: " + numeroCuenta + 
-                     " tipoCuenta: " + tipoCuenta + " saldo: " + saldo + "]";
-  }
-  
 
-   //Creación del método recargar
-  public void recargarCuenta(double cantidad){
+  public String toString() {
+    return "Cuenta [ cedula:" + cedula + " nombre: " + nombre + " numeroCuenta: " + numeroCuenta +
+        " tipoCuenta: " + tipoCuenta + " saldo: " + saldo + "]";
+  }
+
+  // Creación del método recargar
+  public void recargarCuenta(double cantidad) {
     saldo += cantidad;
   }
-  //retirar
-  public void retirarCuenta(double cantidad){
+
+  // retirar
+  public boolean retirarCuenta(double cantidad) {
+    if (cantidad <= 0) {
+      System.out.println("Cantidad inválida");
+      return false;
+    }
+    if (cantidad > saldo) {
+      System.out.println("saldo insuficiente");
+      return false;
+    }
     saldo -= cantidad;
+    return true;
   }
-
-  public void retirarCuenta(Object cantidad) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'retirarCuenta'");
-  }
-
 }
-
