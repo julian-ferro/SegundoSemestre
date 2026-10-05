@@ -12,10 +12,10 @@ public class Libro {
         this.autor = autor;
         this.isbn = isbn;
         this.anioPublicacion = anioPublicacion;
-        this.disponible = disponible;
+        this.disponible = disponible;   
     }
 
-    // getter y setters
+    // getter y setters 
 
     public String getTitulo() {
         return titulo;
